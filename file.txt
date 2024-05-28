@@ -1,3 +1,7 @@
-Line 1 - Changed in commit B
+<<<<<<< HEAD
+Line 1 - new Changes
+=======
+Line 1
+>>>>>>> parent of 7213ee5 (Commit A: Change Line 1)
 Line 2
 Line 3 - Changed in commit B
