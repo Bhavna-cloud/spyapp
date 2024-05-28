@@ -1,3 +1,3 @@
-Line 1 - Changed in commit A
+Line 1 - Changed in commit B
 Line 2
-Line 3
+Line 3 - Changed in commit B
