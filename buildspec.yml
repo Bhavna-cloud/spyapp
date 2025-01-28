@@ -26,10 +26,7 @@ phases:
     commands:
       - echo 'Listing files in target directory...'
       - ls -al target/
-      - echo 'Running the application...'
-      - cd target/
-      - java -jar Assignment3-MihyeBang-0.0.1-SNAPSHOT.jar
-
+      - echo 'jar file is created….'
 artifacts:
   files:
     - target/Assignment3-MihyeBang-0.0.1-SNAPSHOT.jar
