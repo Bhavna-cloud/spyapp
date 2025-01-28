@@ -26,6 +26,7 @@ phases:
     commands:
       - echo 'Running the application...'
       - cd target/
+      - chmod +x target/Assignment3_MihyeBang-0.0.1-SNAPSHOT.jar
       - java -jar Assignment3_MihyeBang-0.0.1-SNAPSHOT.jar
 
 artifacts:
