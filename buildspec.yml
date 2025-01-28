@@ -3,9 +3,9 @@ version: 0.2
 phases:
   install:
     commands:
-      # Install Java 17 (Amazon Corretto)
-      echo Installing Java 17 Amazon Corretto...
-      sudo yum install -y java-17-amazon-corretto-devel || { echo 'Java installation failed'; exit 1; }
+      # Install Amazon Corretto 11 (Java 11)
+      echo Installing Amazon Corretto 11...
+      sudo yum install -y java-11-amazon-corretto-devel || { echo 'Java installation failed'; exit 1; }
 
       # Set JAVA_HOME and update PATH
       echo Setting JAVA_HOME and PATH...
@@ -28,16 +28,9 @@ phases:
       # Verify Maven installation
       mvn --version || { echo 'Maven verification failed'; exit 1; }
 
-  pre_build:
-    commands:
-      # Navigate to the spyapp directory where your project is located
-      echo Navigating to spyapp directory...
-      cd spyapp
-      echo Current directory: $(pwd)
-
   build:
     commands:
-      # Compile and package the project using Maven
+      # Compile and package the project
       echo Compiling the project...
       mvn compile
       echo Packaging the project...
@@ -45,7 +38,7 @@ phases:
 
   post_build:
     commands:
-      # Run the application from the target directory
+      # Run the application
       echo Running the application...
       cd target/
       java -jar Assignment3_MihyeBang-0.0.1-SNAPSHOT.jar
