@@ -21,12 +21,15 @@ phases:
       - mvn compile
       - echo 'Packaging the project...'
       - mvn package -DskipTests=true
+      - echo 'Listing files in target directory after packaging...'
+      - ls -al target/
 
   post_build:
     commands:
       - echo 'Listing files in target directory...'
       - ls -al target/
-      - echo 'jar file is created….'
+      - echo 'JAR file is ready for download or further deployment.'
+
 artifacts:
   files:
     - target/Assignment3-MihyeBang-0.0.1-SNAPSHOT.jar
