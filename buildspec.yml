@@ -3,17 +3,17 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing Amazon Corretto 11...
+      - echo "Installing Amazon Corretto 11..."
       - sudo yum install -y java-11-amazon-corretto-devel || { echo 'Java installation failed'; exit 1; }
-      - echo Setting JAVA_HOME and PATH...
+      - echo "Setting JAVA_HOME and PATH..."
       - export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
       - export PATH=$JAVA_HOME/bin:$PATH
       - echo "JAVA_HOME: $JAVA_HOME"
       - echo "PATH: $PATH"
       - java -version
-      - echo JAVA_HOME is set to $JAVA_HOME
-      - echo PATH is set to $PATH
-      - echo Installing Maven...
+      - echo "JAVA_HOME is set to $JAVA_HOME"
+      - echo "PATH is set to $PATH"
+      - echo "Installing Maven..."
       - curl -sL https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.tar.gz | tar xz -C /tmp || { echo 'Maven installation failed'; exit 1; }
       - export M2_HOME=/tmp/apache-maven-3.9.9
       - export PATH=$M2_HOME/bin:$PATH
@@ -21,14 +21,14 @@ phases:
 
   build:
     commands:
-      - echo Compiling the project...
+      - echo "Compiling the project..."
       - mvn compile
-      - echo Packaging the project...
+      - echo "Packaging the project..."
       - mvn package -DskipTests=true
 
   post_build:
     commands:
-      - echo Running the application...
+      - echo "Running the application..."
       - cd target/
       - java -jar Assignment3_MihyeBang-0.0.1-SNAPSHOT.jar
 
