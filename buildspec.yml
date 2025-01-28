@@ -24,12 +24,13 @@ phases:
 
   post_build:
     commands:
+      - echo 'Listing files in target directory...'
+      - ls -al target/
       - echo 'Running the application...'
       - cd target/
-      - chmod +x target/Assignment3_MihyeBang-0.0.1-SNAPSHOT.jar
-      - java -jar Assignment3_MihyeBang-0.0.1-SNAPSHOT.jar
+      - java -jar Assignment3-MihyeBang-0.0.1-SNAPSHOT.jar
 
 artifacts:
   files:
-    - target/Assignment3_MihyeBang-0.0.1-SNAPSHOT.jar
+    - target/Assignment3-MihyeBang-0.0.1-SNAPSHOT.jar
   discard-paths: yes
