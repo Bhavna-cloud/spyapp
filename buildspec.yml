@@ -9,8 +9,8 @@ phases:
       - export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
       - export PATH=$JAVA_HOME/bin:$PATH
       - java -version
-      - echo 'JAVA_HOME is set to '$JAVA_HOME
-      - echo 'PATH is set to '$PATH
+      - echo 'JAVA_HOME is set to $JAVA_HOME'
+      - echo 'PATH is set to $PATH'
       - echo 'Installing Maven...'
       - curl -sL https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.tar.gz | tar xz -C /tmp || { echo 'Maven installation failed'; exit 1; }
       - export M2_HOME=/tmp/apache-maven-3.9.9
